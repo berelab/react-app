@@ -1,0 +1,10 @@
+$color-primary: #000000;
+$color-bg: #fff;
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  color: $color-primary;
+  background-color: $color-bg;
+  text-align: center;
+  padding: 3em;
+}
