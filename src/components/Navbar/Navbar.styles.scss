@@ -1,0 +1,27 @@
+@use '../../styles/variables';
+
+.navbar {
+  height: 50px;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 4px 10px;
+
+  &__logoContainer {
+    width: 40px;
+  }
+}
+
+.menu {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &__link {
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+}

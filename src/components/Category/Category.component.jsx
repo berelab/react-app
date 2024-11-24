@@ -11,6 +11,8 @@ const Category = ({ genre }) => {
           <img className='category__carousel__item' src={imageUrl}/>
           <img className='category__carousel__item' src={imageUrl}/>
           <img className='category__carousel__item' src={imageUrl}/>
+          <img className='category__carousel__item' src={imageUrl}/>
+          <img className='category__carousel__item' src={imageUrl}/>
       </div>
     </div>
   );

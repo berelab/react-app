@@ -1,27 +1,16 @@
-import React from "react";
-import Movies from "./components/Movies/Movies.component";
+import { Routes, Route } from "react-router-dom";
 
+import Navigation from "./routes/Navigation/Navigation";
+import Home from "./routes/Home/Home";
 
 const App = () => {
-  const categories = [
-    {
-      id: 1,
-      title: 'Romance',
-      imageUrl : 'https://media.themoviedb.org/t/p/w220_and_h330_face/bzXczujSYdsddv9FZBmVhPUN65z.jpg',
-    },
-    {
-      id: 2,
-      title: 'Fantasy',
-      imageUrl: 'https://media.themoviedb.org/t/p/w220_and_h330_face/q1czoLwMaiUO1bznWuETCP5ueZj.jpg',
-    },
-    {
-      id: 3,
-      title: 'Thriller',
-      imageUrl : 'https://media.themoviedb.org/t/p/w220_and_h330_face/cjXLrg4R7FRPFafvuQ3SSznQOd9.jpg',
-    }
-  ]
-  return <Movies movies={categories}/>;
+  return (
+    <Routes>
+      <Route path="/" element={<Navigation />}>   
+        <Route index element={<Home/>}></Route>     
+      </Route>
+    </Routes>
+  );
 };
   
-
 export default App;

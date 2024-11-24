@@ -1,3 +1,5 @@
+@use './styles/variables';
+
 @font-face {
   font-family: 'Roboto';
   src: url('./assets/fonts/Roboto-Thin.ttf') format('ttf');
@@ -22,6 +24,14 @@
   font-weight: 700;
   font-style: normal;
 }
+*{
+  box-sizing: border-box;
+}
 body{
   font-family: 'Roboto', sans-serif;
+  background-color: variables.$primary_color;
+}
+a{
+  text-decoration: none;
+  color: variables.$white_color;
 }
