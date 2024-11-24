@@ -1,4 +1,4 @@
-import './Gallery.styles.scss';
+import './Gallery.scss';
 
 const Gallery = ({ list }) => {
   return (
