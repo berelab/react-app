@@ -1,24 +1,39 @@
 import Movies from "../../components/Movies/Movies.component";
-
+import movieState from "../../hooks/movieState";
 
 const Home = () => {
+  const { data: romanceMovies, loading: loadingRomance, error: errorRomance } = movieState(10749);
+  const { data: fantasyMovies, loading: loadingFantasy, error: errorFantasy } = movieState(14);
+  const { data: thrillerMovies, loading: loadingThriller, error: errorThriller } = movieState(53);
+  const { data: musicMovies, loading: loadingMusic, error: errorMusic } = movieState(10402);
+
+  const isLoading = [loadingRomance, loadingFantasy, loadingThriller, loadingMusic].some(loading => loading);
+
+  if(isLoading) return "loading content..."
+  
   const categories = [
     {
       id: 1,
       title: 'Romance',
-      imageUrl : 'https://media.themoviedb.org/t/p/w220_and_h330_face/bzXczujSYdsddv9FZBmVhPUN65z.jpg',
+      movies: romanceMovies.results,
     },
     {
       id: 2,
       title: 'Fantasy',
-      imageUrl: 'https://media.themoviedb.org/t/p/w220_and_h330_face/q1czoLwMaiUO1bznWuETCP5ueZj.jpg',
+      movies: fantasyMovies.results,
     },
     {
       id: 3,
       title: 'Thriller',
-      imageUrl : 'https://media.themoviedb.org/t/p/w220_and_h330_face/cjXLrg4R7FRPFafvuQ3SSznQOd9.jpg',
-    }
+      movies: thrillerMovies.results,
+    },
+    {
+      id: 4,
+      title: 'Music',
+      movies: musicMovies.results,
+    },
   ]
+
   return <Movies movies={categories}/>;
 };
   

@@ -16,9 +16,15 @@
     overflow-x: scroll;
 
     &__item{
-      width: 100%;
+      width: 20%;
       object-fit: cover;
       height: auto;
+      cursor: pointer;
+      
+      &:hover{
+        transform: scale(1.02);
+        box-shadow: #0091a34a 0px 0px 20px 0px;
+      }
     }
   }
 }
