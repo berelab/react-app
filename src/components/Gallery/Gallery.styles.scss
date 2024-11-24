@@ -1,0 +1,47 @@
+@use '../../styles/variables';
+
+.grid{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items:center;
+  gap:1em;
+  padding: 10px;
+  padding:1rem;
+
+  @media screen and (max-width: 650px) {
+    gap:1em;
+  }
+}
+
+.item__image{
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  opacity:0;
+  animation-name: fade-in;
+  animation-duration: 1s ;
+  animation-fill-mode:forwards;
+  cursor: pointer;
+  &:hover{
+    transform: scale(1.02);
+    box-shadow: #0091a34a 0px 0px 20px 0px;
+  }
+}
+
+.item__title{
+  color: white;
+  font-size: 12px;
+  font-family: 'Roboto-regular';
+  cursor: pointer;
+}
+
+.fade-in-animate{
+  animation-name: fade-in;
+}
+
+@keyframes fade-in{
+  100%{
+    opacity: 1;
+  }
+}

@@ -5,11 +5,12 @@
   width: 95%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
   padding: 4px 10px;
 
   &__logoContainer {
-    width: 40px;
+    width: 200px;
   }
 }
 
