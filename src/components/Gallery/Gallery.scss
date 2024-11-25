@@ -22,10 +22,10 @@
   animation-name: fade-in;
   animation-duration: 1s ;
   animation-fill-mode:forwards;
+  border-radius: 8px;
   cursor: pointer;
   &:hover{
     transform: scale(1.02);
-    box-shadow: #0091a34a 0px 0px 20px 0px;
   }
 }
 

@@ -20,12 +20,16 @@
       scroll-snap-align: start;
       text-align: left;
       cursor: pointer;
+      position: relative;
       
       img{
         width: 100%;
         height: auto;
         border-radius: 8px;
         object-fit: cover;
+        &:hover{
+          transform: scale(1.02);
+        }
       }
     }
 

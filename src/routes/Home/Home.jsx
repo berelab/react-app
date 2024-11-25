@@ -13,22 +13,18 @@ const Home = () => {
   
   const categories = [
     {
-      id: 1,
       title: 'Romance',
       movies: romanceMovies.results,
     },
     {
-      id: 2,
       title: 'Fantasy',
       movies: fantasyMovies.results,
     },
     {
-      id: 3,
       title: 'Thriller',
       movies: thrillerMovies.results,
     },
     {
-      id: 4,
       title: 'Music',
       movies: musicMovies.results,
     },
