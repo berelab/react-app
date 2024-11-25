@@ -8,6 +8,8 @@
   align-items: center;
   margin: 0 auto;
   padding: 4px 10px;
+  position: fixed;
+  z-index: 10;
 
   &__logoContainer {
     width: 200px;

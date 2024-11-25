@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import detailsState from '../../hooks/detailsState';
+import Banner from "../../components/Banner/Banner";
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -8,7 +9,7 @@ const MovieDetails = () => {
   console.log(movieDetails);
 
   return(
-    <p>{`Soy movie ${id} y aqui van mis detalles`}</p>
+    <Banner details={movieDetails} />
   );
 };
 

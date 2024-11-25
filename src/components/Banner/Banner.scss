@@ -1,0 +1,28 @@
+.banner{
+  position: relative;
+
+  &__container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    img{
+      z-index: -1;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      object-fit: cover;
+    }
+    h2{
+      position: absolute;
+      top: 60%;
+      left: 2%;
+      font-family: 'Roboto-black';
+      margin: 0 0 1rem;
+      font-size: 4rem;
+    }
+  }
+}
