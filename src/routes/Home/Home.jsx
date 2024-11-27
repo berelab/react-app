@@ -1,4 +1,4 @@
-import Movies from "../../components/Movies/Movies.component";
+import MovieCategories from "../../components/MoviesCategories/MovieCategories.component";
 import movieState from "../../hooks/movieState";
 
 const genres = [
@@ -25,7 +25,7 @@ const Home = () => {
   console.log(categories);
   
 
-  return <Movies movies={categories}/>;
+  return <MovieCategories movies={categories}/>;
 };
   
 

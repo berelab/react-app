@@ -1,12 +1,8 @@
 import { Link } from 'react-router-dom';
-import './Category.scss';
 
-const Category = ({ genre }) => {
-  const { title , movies } = genre;
+const Carousel = ({movies}) => {
   return (
-    <div className="category">          
-      <h2>{title}</h2>
-      <div className="category__carousel">
+    <div className="category__carousel">
         {movies.map((film) => (
           <div key={film.id} className='category__carousel__item'>
             <Link to={`/movie/${film.id}`}>
@@ -16,8 +12,7 @@ const Category = ({ genre }) => {
           </div>
         ))}
       </div>
-    </div>
   );
 };
 
-export default Category;
+export default Carousel;

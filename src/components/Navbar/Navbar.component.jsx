@@ -9,7 +9,7 @@ const Navbar = () => {
         <MainLogo ></MainLogo>
       </Link>
       <div className="menu">
-        <Link className="menu__link" to='/favorites'>Favorites</Link>
+        <Link className="menu__link" to='/favorites'>Watchlist</Link>
       </div>
     </div>
   );
