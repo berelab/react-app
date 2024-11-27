@@ -2,6 +2,11 @@
 
 .category{
   color: variables.$white_color;
+  padding-bottom: 32px;
+
+  h2{
+    padding-bottom: 2%;
+  }
 
   &__carousel{
     display: flex;

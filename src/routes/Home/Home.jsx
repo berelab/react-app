@@ -1,34 +1,29 @@
 import Movies from "../../components/Movies/Movies.component";
 import movieState from "../../hooks/movieState";
 
+const genres = [
+  { id: 10749, title: 'Romance'},
+  { id: 14, title: 'Fantasy'},
+  { id: 53, title: 'Thriller'},
+  { id: 10402, title: 'Music'}
+];
+
 const Home = () => {
-  const { data: romanceMovies, loading: loadingRomance, error: errorRomance } = movieState(10749);
-  const { data: fantasyMovies, loading: loadingFantasy, error: errorFantasy } = movieState(14);
-  const { data: thrillerMovies, loading: loadingThriller, error: errorThriller } = movieState(53);
-  const { data: musicMovies, loading: loadingMusic, error: errorMusic } = movieState(10402);
+  const states = genres.map((genre) => ({
+    ...genre,
+    ...movieState(genre.id)
+  }));
 
-  const isLoading = [loadingRomance, loadingFantasy, loadingThriller, loadingMusic].some(loading => loading);
+  const isLoading = states.some((state) => state.loading);
 
-  if(isLoading) return "loading content..."
+  if(isLoading) return "loading content...";
   
-  const categories = [
-    {
-      title: 'Romance',
-      movies: romanceMovies.results,
-    },
-    {
-      title: 'Fantasy',
-      movies: fantasyMovies.results,
-    },
-    {
-      title: 'Thriller',
-      movies: thrillerMovies.results,
-    },
-    {
-      title: 'Music',
-      movies: musicMovies.results,
-    },
-  ]
+  const categories = states.map((state) => ({
+    title: state.title,
+    movies: state.data?.results || [],
+  }));
+  console.log(categories);
+  
 
   return <Movies movies={categories}/>;
 };
