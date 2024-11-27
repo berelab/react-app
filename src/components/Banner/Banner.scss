@@ -1,6 +1,7 @@
 .banner{
   position: relative;
-
+  max-height: 60vh;
+  
   &__container{
     position: relative;
     width: 100%;
@@ -15,14 +16,28 @@
       left: 0;
       height: 100%;
       object-fit: cover;
-    }
-    h2{
-      position: absolute;
-      top: 60%;
-      left: 2%;
-      font-family: 'Roboto-black';
-      margin: 0 0 1rem;
-      font-size: 4rem;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     }
   }
+  &__slogan{
+    position: absolute;
+    top: 40%;
+    left: 2%;    
+    margin: 0 0 1rem;
+    font-family: 'Roboto-light';
+    font-size: 2rem;
+    width: 90%;
+
+    h2{
+      font-family: 'Roboto-black';
+      font-size: 4rem;
+      span{
+        display: inline-block;
+        font-size: 1rem;
+        padding-left: 1%;
+      }
+    }
+    
+  }
+  
 }
