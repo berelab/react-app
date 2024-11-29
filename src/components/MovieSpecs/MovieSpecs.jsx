@@ -1,8 +1,20 @@
 import './MovieSpecs.scss';
 import { formatDate } from '../../utils/dateFormatter';
+import { addToWatchList } from '../../utils/addToWatchlist';
 
 const MovieSpecs = ({details}) => {
   const { title, poster_path, genres, original_language, overview, release_date } = details;
+
+  const handleAddToWatchList = async() => {
+    try {
+    const moviedocRef = await addToWatchList(details);
+    console.log('doc ref en specs: ',moviedocRef);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
+
   return(
     <div className='movie_specs'>
       <div className='movie__image'>
@@ -21,7 +33,7 @@ const MovieSpecs = ({details}) => {
           </p>
           <p><strong>Language:</strong> {original_language}</p>
           <p><strong>Overview:</strong><br/>{overview}</p>
-          <button className="button" role="button"><span className="button__text">Add to watchlist!</span></button>
+          <button className="button" onClick={handleAddToWatchList} role="button"><span className="button__text">Add to watchlist!</span></button>
         </div>
       </div>
     </div>
