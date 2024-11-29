@@ -5,9 +5,12 @@
   flex-wrap: wrap;
   justify-content:center;
   align-items:center;
-  gap:1em;
-  padding: 10px;
+  column-gap:1em;
+  row-gap: 3em;
   padding:1rem;
+  width: 95%;
+  padding-top: 6em;
+  margin: 0 auto;
 
   @media screen and (max-width: 650px) {
     gap:1em;
@@ -24,6 +27,7 @@
   animation-fill-mode:forwards;
   border-radius: 8px;
   cursor: pointer;
+  
   &:hover{
     transform: scale(1.02);
   }
@@ -31,8 +35,9 @@
 
 .item__title{
   color: white;
-  font-size: 12px;
-  font-family: 'Roboto-regular';
+  font-size: 13px;
+  font-family: 'Roboto-bold';
+  padding-top: 4px;
   cursor: pointer;
 }
 
