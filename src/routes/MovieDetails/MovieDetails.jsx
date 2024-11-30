@@ -6,8 +6,6 @@ import MovieSpecs from "../../components/MovieSpecs/MovieSpecs";
 const MovieDetails = () => {
   const { id } = useParams();
   const { data: movieDetails, loader: loadingDetails, error: errorDetails } = detailsState(id);
-  
-  console.log(movieDetails);
 
   return(
     <div className="detailsPage">

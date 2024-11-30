@@ -1,5 +1,14 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import {
+	getFirestore,
+	doc,
+	getDoc,
+	setDoc,
+	collection,
+	query,
+	getDocs,
+	DocumentSnapshot,
+} from "firebase/firestore";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyBKcTz2zsYz0ofF2lef6H_n9TzTd4bdxOg",
@@ -31,9 +40,17 @@ export const crateMovieDocument = async (movie) => {
 				addedAt,
 			});
 		} catch (error) {
-			console.log(error);
+			throw error;
 		}
-
-		return docReference;
 	}
+	return docReference;
+};
+
+export const getWatchListDocs = async () => {
+	const collectionRef = collection(db, "watchlist");
+	const qs = query(collectionRef);
+
+	const querySnapshot = await getDocs(qs);
+	const movieMap = querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
+	return movieMap;
 };

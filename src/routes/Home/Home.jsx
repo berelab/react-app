@@ -22,8 +22,6 @@ const Home = () => {
     title: state.title,
     movies: state.data?.results || [],
   }));
-  console.log(categories);
-  
 
   return <MovieCategories movies={categories}/>;
 };
