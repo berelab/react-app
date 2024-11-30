@@ -7,7 +7,7 @@ import {
 	collection,
 	query,
 	getDocs,
-	DocumentSnapshot,
+	deleteDoc,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -53,4 +53,14 @@ export const getWatchListDocs = async () => {
 	const querySnapshot = await getDocs(qs);
 	const movieMap = querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
 	return movieMap;
+};
+
+export const removeDoc = async (movieID) => {
+	const docReference = doc(db, "watchlist", String(movieID));
+	try {
+		await deleteDoc(docReference);
+	} catch (error) {
+		throw error;
+	}
+	return docReference;
 };

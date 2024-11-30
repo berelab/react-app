@@ -10,9 +10,14 @@
   position: fixed;
   top: 3%;
   z-index: 10;
+  transition: background-color 0.3s ease;
+  background-color: transparent;
 
   &__logoContainer {
     width: 200px;
+  }
+  &--scrolled{
+    background-color: variables.$primary_color;
   }
 }
 

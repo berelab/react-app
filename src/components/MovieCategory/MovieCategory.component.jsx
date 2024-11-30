@@ -6,7 +6,7 @@ const MovieCategory = ({ genre }) => {
   return (
     <div className="category">          
       <h2>{title}</h2>
-      <Carousel movies={movies} />
+      <Carousel movies={movies} state={title}/>
     </div>
   );
 };

@@ -1,16 +1,30 @@
 import { useState, useEffect } from "react";
 import moviesFetcher from "../services/moviesFetcher";
+import movieGenreFetcher from "../services/movieGenresFetcher";
 
 const movieState = (genreID) => {
-	const [data, setData] = useState([]);
+	const [genre, setGenre] = useState([]);
+	const [movies, setMovies] = useState([]);
 	const [loading, setLoader] = useState(true);
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
 		const getMovies = async () => {
 			try {
-				const result = await moviesFetcher(genreID);
-				setData(result);
+				const genreResult = await movieGenreFetcher();
+				setGenre(genreResult);
+
+				const moviesByGenre = await Promise.all(
+					genreResult.genres.map(async (genre) => {
+						const moviesResult = await moviesFetcher(genre.id);
+						return {
+							...genre,
+							movies: moviesResult.results,
+						};
+					})
+				);
+
+				setMovies(moviesByGenre);
 			} catch (error) {
 				setError(error.message);
 			} finally {
@@ -20,7 +34,7 @@ const movieState = (genreID) => {
 		getMovies();
 	}, [genreID]);
 
-	return { data, loading, error };
+	return { genre, movies, loading, error };
 };
 
 export default movieState;

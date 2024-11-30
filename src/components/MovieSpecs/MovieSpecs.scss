@@ -13,6 +13,15 @@
     grid-template-rows: [movieimage] .8fr [moviedetail] 1fr;
   }
 }
+.Action {
+  background: linear-gradient(to top, #281a1a 90%, rgba(0, 0, 0, 0) 100%);
+}
+.Adventure {
+  background: linear-gradient(to top, #333052 90%, rgba(0, 0, 0, 0) 100%);
+}
+.Animation {
+  background: linear-gradient(to top, #004064 90%, rgba(0, 0, 0, 0) 100%);
+}
 .movie__image{
   width: 100%;  
   grid-area: movieimage;

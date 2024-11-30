@@ -1,26 +1,16 @@
+import Loader from "../../components/Loader/Loader.component";
 import MovieCategories from "../../components/MoviesCategories/MovieCategories.component";
 import movieState from "../../hooks/movieState";
 
-const genres = [
-  { id: 10749, title: 'Romance'},
-  { id: 14, title: 'Fantasy'},
-  { id: 53, title: 'Thriller'},
-  { id: 10402, title: 'Music'}
-];
-
 const Home = () => {
-  const states = genres.map((genre) => ({
-    ...genre,
-    ...movieState(genre.id)
-  }));
+  const { movies, loading, error } = movieState();
 
-  const isLoading = states.some((state) => state.loading);
-
-  if(isLoading) return "loading content...";
+  if(loading) return <Loader/>;
+  if(error) return "An error occurred...";
   
-  const categories = states.map((state) => ({
-    title: state.title,
-    movies: state.data?.results || [],
+  const categories = movies.map((movie) => ({
+    title: movie.name,
+    movies: movie.movies || [],
   }));
 
   return <MovieCategories movies={categories}/>;
