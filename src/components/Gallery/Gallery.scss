@@ -1,15 +1,12 @@
 @use '../../styles/variables';
 
-.grid{
-  display:flex;
-  flex-wrap: wrap;
-  justify-content:center;
-  align-items:center;
-  column-gap:1em;
-  row-gap: 3em;
-  padding:1rem;
-  width: 95%;
-  padding-top: 6em;
+.fav__container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  box-sizing: border-box;
+  padding-top: 6rem;
+  max-width: 95%;
   margin: 0 auto;
 
   @media screen and (max-width: 650px) {
@@ -17,28 +14,48 @@
   }
 }
 
-.item__image{
-  width: 100%;
-  height: auto;
-  aspect-ratio: auto;
-  opacity:0;
-  animation-name: fade-in;
-  animation-duration: 1s ;
-  animation-fill-mode:forwards;
+.gallery{
   border-radius: 8px;
-  cursor: pointer;
-  
-  &:hover{
-    transform: scale(1.02);
-  }
-}
+  overflow: hidden;
+  &__item{
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
 
-.item__title{
-  color: white;
-  font-size: 13px;
-  font-family: 'Roboto-bold';
-  padding-top: 4px;
-  cursor: pointer;
+    &__image{
+      width: 100%;
+      height: auto;
+      aspect-ratio: auto;
+      opacity:0;
+      animation-name: fade-in;
+      animation-duration: 1s ;
+      animation-fill-mode:forwards;
+      border-radius: 8px;
+      cursor: pointer;
+      
+      &:hover{
+        transform: scale(1.02);
+      }
+    }
+
+    &__title{
+      padding-top: 4px;
+      cursor: pointer;
+      font-family: 'Roboto-bold';
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: variables.$white_color;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      span{
+        font-family: 'Roboto-regular';
+        margin-top: 2px;
+        font-size: 0.675rem;
+      }
+    }
+  }
 }
 
 .fade-in-animate{
