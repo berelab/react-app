@@ -1,4 +1,5 @@
 @use '../../styles/variables';
+@use '../../styles/mixin';
 
 .category{
   color: variables.$white_color;
@@ -30,7 +31,7 @@
       img{
         width: 100%;
         height: auto;
-        border-radius: 8px;
+        border-radius: variables.$border-radius;
         object-fit: cover;
         &:hover{
           transform: scale(1.02);
@@ -39,9 +40,9 @@
     }
 
     &__title{
-      font-family: 'Roboto-bold';
+      font-family: variables.$font-roboto-bold;
       margin-top: 0.5rem;
-      font-size: 0.875rem;
+      @include mixin.font-size(medium); 
       color: variables.$white_color;
       white-space: nowrap;
       overflow: hidden;
@@ -50,7 +51,7 @@
       span{
         font-family: 'Roboto-regular';
         margin-top: 2px;
-        font-size: 0.675rem;
+        @include mixin.font-size(small); 
       }
     }
   }

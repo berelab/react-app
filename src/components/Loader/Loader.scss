@@ -1,9 +1,11 @@
+@use '../../styles/mixin';
+@use '../../styles/variables';
 
 .loader__container{
   @include mixin.flex-layout(column);
   height: 100vh;
   row-gap: 2%;
-  font-family: 'Roboto-bold';
+  font-family: variables.$font-roboto-bold;
 }
 
 .loader {

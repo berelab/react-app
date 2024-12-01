@@ -28,7 +28,7 @@
 
   &__header{
     padding: 2%;
-    font-size: 2rem;
+    @include mixin.font-size(xlarge); 
   }
   &__body{
     max-width: 80%;
@@ -39,47 +39,16 @@
       line-height: 23px;
       letter-spacing: 0.3px;
       text-align: left;
-      font-size: 16px;
+      @include mixin.font-size(large); 
     }
   }
 }
 
-
-
 .button {
+  @extend %button;
   margin-top: 24px;
-  align-items: center;
-  background-image: linear-gradient(144deg,variables.$accent_color_one, variables.$accent_color_two, 50%, variables.$accent_color_three);
-  border: 0;
-  border-radius: 8px;
-  box-shadow: variables.$shadow_color 0 15px 30px -5px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  display: flex;
-  font-family: variables.$font-roboto-light;
-  font-size: 16px;
-  justify-content: center;
-  line-height: 23px;
-  letter-spacing: 0.3px;
-  max-width: 100%;
-  min-width: 140px;
-  padding: 3px;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  cursor: pointer;
-
-  &:active{
-    outline: 0;
-  }
-  &:hover{
-    outline: 0;
-  }
-
   &__text{
-    background-color: rgb(5, 6, 45);
+    background-color: variables.$primary_color;
     padding: 16px 24px;
     border-radius: 6px;
     transition: 300ms;

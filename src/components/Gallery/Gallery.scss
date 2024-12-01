@@ -1,21 +1,20 @@
 @use '../../styles/variables';
+@use '../../styles/mixin';
 
 .fav__container{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
+  @include mixin.grid-layout(repeat(auto-fill, minmax(220px, 1fr)), 16px, 16px);
   box-sizing: border-box;
   padding-top: 6rem;
   max-width: 95%;
   margin: 0 auto;
 
   @media screen and (max-width: 650px) {
-    gap:1em;
+    gap: 1em;
   }
 }
 
 .gallery{
-  border-radius: 8px;
+  border-radius: variables.$border-radius;
   overflow: hidden;
   &__item{
     display: block;
@@ -31,7 +30,7 @@
       animation-name: fade-in;
       animation-duration: 1s ;
       animation-fill-mode:forwards;
-      border-radius: 8px;
+      border-radius: variables.$border-radius;
       cursor: pointer;
       
       &:hover{
@@ -42,17 +41,17 @@
     &__title{
       padding-top: 4px;
       cursor: pointer;
-      font-family: 'Roboto-bold';
+      font-family: variables.$font-roboto-bold;
       margin-top: 0.5rem;
-      font-size: 0.875rem;
+      @include mixin.font-size(medium); 
       color: variables.$white_color;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       span{
-        font-family: 'Roboto-regular';
+        font-family: variables.$font-roboto-regular;
         margin-top: 2px;
-        font-size: 0.675rem;
+        @include mixin.font-size(small); 
       }
     }
   }

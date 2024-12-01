@@ -4,6 +4,7 @@ $accent_color_one: #AF40FF;
 $accent_color_two: #5B42F3;
 $accent_color_three: #00DDEB;
 $shadow_color: #9741fc33;
+$border-radius: 8px;
 
 $font-roboto-regular: 'Roboto-regular';
 $font-roboto-light: 'Roboto-light';
@@ -28,4 +29,12 @@ $font-scifi: 'Orbitron';
 $font-thriller: 'BebasNeue';
 $font-war: 'Cinzel';
 $font-western: 'Rye';
+
+$font-sizes: (
+  xxlarge: 4rem, 
+  xlarge: 2rem,
+  large: 1rem,
+  medium: 0.875rem,
+  smaill: 0.675rem
+);
 

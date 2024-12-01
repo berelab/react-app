@@ -1,5 +1,6 @@
 @use '../../styles/variables';
 @use '../../styles/global';
+@use '../../styles/mixin';
 
 .banner{
   position: relative;
@@ -23,20 +24,20 @@
     }
   }
   &__slogan{
+    @include mixin.font-size(xlarge); 
     position: absolute;
     top: 40%;
     left: 2%;    
     margin: 0 0 1rem;
-    font-family: variables.$font-roboto-light;
-    font-size: 2rem;
+    font-family: variables.$font-roboto-light; 
     width: 90%;
 
     h2{
       font-family: variables.$font-roboto-bold;
-      font-size: 4rem;
+      @include mixin.font-size(xxlarge); 
       span{
         display: inline-block;
-        font-size: 1rem;
+        @include mixin.font-size(large); 
         padding-left: 1%;
       }
     }

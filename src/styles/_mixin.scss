@@ -1,3 +1,6 @@
+@use './variables';
+@use 'sass:map';
+
 @mixin font-face($name, $file, $weight: 400, $style: normal){
   @font-face {
     font-family: $name;
@@ -5,6 +8,10 @@
     font-weight: $weight;
     font-style: $style;
   }
+}
+
+@mixin font-size($size){
+  font-size: map.get(variables.$font-sizes, $size);
 }
 
 @mixin flex-layout($direction, $justify: center, $align: center){
