@@ -27,9 +27,7 @@
       height: auto;
       aspect-ratio: auto;
       opacity:0;
-      animation-name: fade-in;
-      animation-duration: 1s ;
-      animation-fill-mode:forwards;
+      @include mixin.fadein-animation;
       border-radius: variables.$border-radius;
       cursor: pointer;
       
@@ -39,19 +37,19 @@
     }
 
     &__title{
+      @include mixin.text-format(variables.$font-roboto-bold, medium); 
+      @include mixin.text-details(20px, 0.3px, left);
       padding-top: 4px;
       cursor: pointer;
-      font-family: variables.$font-roboto-bold;
       margin-top: 0.5rem;
-      @include mixin.font-size(medium); 
       color: variables.$white_color;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+
       span{
-        font-family: variables.$font-roboto-regular;
+        @include mixin.text-format(variables.$font-roboto-regular, small); 
         margin-top: 2px;
-        @include mixin.font-size(small); 
       }
     }
   }

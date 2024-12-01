@@ -9,9 +9,26 @@
     font-style: $style;
   }
 }
+@mixin text-format($family, $size){
+  font-family: $family;
+  @include font-size($size);
+}
+
+@mixin text-details($lh, $ls: 03px, $align){
+  line-height: $lh;
+  letter-spacing: $ls;
+  text-align: $align;
+}
 
 @mixin font-size($size){
   font-size: map.get(variables.$font-sizes, $size);
+}
+
+@mixin loader-styles($size, $background){
+  width: $size;
+  height: $size;
+  background: $background;
+  border-radius: 50%;
 }
 
 @mixin flex-layout($direction, $justify: center, $align: center){
@@ -33,4 +50,10 @@
     grid-template-columns: auto;
     grid-template-rows: $rows;
   }
+}
+
+@mixin fadein-animation {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }

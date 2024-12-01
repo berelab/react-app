@@ -9,28 +9,12 @@
 }
 
 .loader {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background:  linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  @include mixin.loader-styles(100px, variables.$gradient);
   animation: animate 0.4s linear infinite;
 }
-
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .loader span {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  @include mixin.loader-styles(100px, variables.$gradient);
 }
 
 .loader:after {
@@ -42,4 +26,13 @@
   right: 10px;
   background: #000000;
   border-radius: 50%;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

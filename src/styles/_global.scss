@@ -30,14 +30,12 @@ $genre-fonts: (
 
 %button {
   @include mixin.flex-layout(column);
-  background-image: linear-gradient(144deg,variables.$accent_color_one, variables.$accent_color_two, 50%, variables.$accent_color_three);
+  background-image: variables.$gradient;
   border: 0;
   border-radius: variables.$border-radius;
   box-shadow: variables.$shadow_color 0 15px 30px -5px;
   box-sizing: border-box;
   color: variables.$white_color;
-  font-family: variables.$font-roboto-light;
-  font-size: 1rem;
   line-height: 23px;
   letter-spacing: 0.3px;
   max-width: 100%;

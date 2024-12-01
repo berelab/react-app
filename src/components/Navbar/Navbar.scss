@@ -30,7 +30,7 @@
 
     &:hover{
       color: variables.$white_color;
-      background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+      background-image: variables.$gradient;
       border-radius: variables.$border-radius;
     }
   }

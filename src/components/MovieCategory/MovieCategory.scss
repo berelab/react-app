@@ -24,7 +24,7 @@
       flex: 0 0 auto;
       width: 200px;
       scroll-snap-align: start;
-      text-align: left;
+      @include mixin.text-details(20px, 0.3px, left);
       cursor: pointer;
       position: relative;
       
@@ -33,6 +33,7 @@
         height: auto;
         border-radius: variables.$border-radius;
         object-fit: cover;
+
         &:hover{
           transform: scale(1.02);
         }
@@ -40,18 +41,16 @@
     }
 
     &__title{
-      font-family: variables.$font-roboto-bold;
+      @include mixin.text-format(variables.$font-roboto-bold, medium);
       margin-top: 0.5rem;
-      @include mixin.font-size(medium); 
       color: variables.$white_color;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
 
       span{
-        font-family: 'Roboto-regular';
+        @include mixin.text-format(variables.$font-roboto-regular, small);
         margin-top: 2px;
-        @include mixin.font-size(small); 
       }
     }
   }

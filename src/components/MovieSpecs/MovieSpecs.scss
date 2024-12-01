@@ -33,26 +33,26 @@
   &__body{
     max-width: 80%;
     padding: 2%;
-    font-family: variables.$font-roboto-light;
+    @include mixin.text-format(variables.$font-roboto-light, large);
+    
     p{
       padding-bottom: 10px;
-      line-height: 23px;
-      letter-spacing: 0.3px;
-      text-align: left;
-      @include mixin.font-size(large); 
+      @include mixin.text-details(23px,0.3px,left);
     }
   }
 }
 
 .button {
   @extend %button;
+  @include mixin.text-format(variables.$font-roboto-light, large);
   margin-top: 24px;
+
   &__text{
     background-color: variables.$primary_color;
     padding: 16px 24px;
     border-radius: 6px;
     transition: 300ms;
-
+    
     &:hover{
       background: none;
     }

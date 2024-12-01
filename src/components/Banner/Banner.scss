@@ -1,5 +1,4 @@
 @use '../../styles/variables';
-@use '../../styles/global';
 @use '../../styles/mixin';
 
 .banner{
@@ -20,21 +19,20 @@
       left: 0;
       height: 100%;
       object-fit: cover;
-      mask-image: linear-gradient(to bottom, variables.$primary_color, #00000000);
+      mask-image: variables.$mask-gradient;
     }
   }
   &__slogan{
-    @include mixin.font-size(xlarge); 
+    @include mixin.text-format(variables.$font-roboto-light, xlarge); 
     position: absolute;
     top: 40%;
     left: 2%;    
     margin: 0 0 1rem;
-    font-family: variables.$font-roboto-light; 
     width: 90%;
 
     h2{
-      font-family: variables.$font-roboto-bold;
-      @include mixin.font-size(xxlarge); 
+      @include mixin.text-format(variables.$font-roboto-bold, xxlarge); 
+
       span{
         display: inline-block;
         @include mixin.font-size(large); 
