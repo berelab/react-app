@@ -1,10 +1,7 @@
 
 .loader__container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mixin.flex-layout(column);
   height: 100vh;
-  flex-direction: column;
   row-gap: 2%;
   font-family: 'Roboto-bold';
 }

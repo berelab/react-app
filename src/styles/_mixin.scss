@@ -1,0 +1,29 @@
+@mixin font-face($name, $file, $weight: 400, $style: normal){
+  @font-face {
+    font-family: $name;
+    src: url(~assets/fonts/#{$file}.ttf) format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin flex-layout($direction, $justify: center, $align: center){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid-layout($columns, $column-gap: 10px, $row-gap: 0){
+  display: grid;
+  grid-template-columns: $columns;
+  column-gap: $column-gap;
+  row-gap: $row-gap;
+}
+
+@mixin media-grid($max-width, $rows) {
+  @media screen and (max-width: $max-width){
+    grid-template-columns: auto;
+    grid-template-rows: $rows;
+  }
+}

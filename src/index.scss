@@ -1,29 +1,29 @@
 @use './styles/variables';
+@use './styles/mixin';
 
-@font-face {
-  font-family: 'Roboto';
-  src: url('./assets/fonts/Roboto-Thin.ttf') format('ttf');
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('./assets/fonts/Roboto-Light.ttf') format('ttf');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('./assets/fonts/Roboto-Regular.ttf') format('ttf');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('./assets/fonts/Roboto-Bold.ttf') format('ttf');
-  font-weight: 700;
-  font-style: normal;
-}
+@include mixin.font-face("Roboto", "Roboto-Thin", 100);
+@include mixin.font-face("Roboto", "Roboto-Light", 300);
+@include mixin.font-face("Roboto", "Roboto-Regular", 400);
+@include mixin.font-face("Roboto", "Roboto-Bold", 700);
+@include mixin.font-face("Bangers", "Bangers-Regular", 400);
+@include mixin.font-face("FrederickatheGreat", "FrederickatheGreat-Regular", 400);
+@include mixin.font-face("Chewy", "Chewy-Regular", 400);
+@include mixin.font-face("PermanentMarker", "PermanentMarker-Regular", 400);
+@include mixin.font-face("Anton", "Anton-Regular", 400);
+@include mixin.font-face("Merriweather", "Merriweather-Black", 700);
+@include mixin.font-face("PlayfairDisplay", "PlayfairDisplay", 400);
+@include mixin.font-face("HachiMaruPop", "HachiMaruPop-Regular", 400);
+@include mixin.font-face("Bokor", "Bokor-Regular", 400);
+@include mixin.font-face("CrimsonText", "CrimsonText-SemiBold", 500);
+@include mixin.font-face("Creepster", "Creepster-Regular", 400);
+@include mixin.font-face("AmaticSC", "AmaticSC-Bold", 400);
+@include mixin.font-face("SpecialElite", "SpecialElite-Regular", 400);
+@include mixin.font-face("DancingScript", "DancingScript", 400);
+@include mixin.font-face("Orbitron", "Orbitron", 400);
+@include mixin.font-face("BebasNeue", "BebasNeue-Regular", 400);
+@include mixin.font-face("Cinzel", "Cinzel", 400);
+@include mixin.font-face("Rye", "Rye-Regular", 400);
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -32,7 +32,7 @@
   }
 }
 body{
-  font-family: 'Roboto', sans-serif;
+  font-family: variables.$font-roboto-regular, sans-serif;
   background-color: variables.$primary_color;
   color: variables.$white_color;
 }

@@ -1,27 +1,16 @@
 @use '../../styles/variables';
+@use '../../styles/global';
+@use '../../styles/mixin';
 
 .movie_specs {
-  display: grid;
-  grid-template-columns: [movieimage] .8fr [moviedetail] 1fr;
-  column-gap: 10px;
+  @include mixin.grid-layout([movieimage] .8fr [moviedetail] 1fr);
   padding: 6%;
   margin: 0 auto;
-  background: linear-gradient(to top, rgb(0 0 0) 90%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to top, variables.$primary_color 90%, #00000000 100%);
 
-  @media screen and (max-width: 900px) {
-    grid-template-columns: auto;
-    grid-template-rows: [movieimage] .8fr [moviedetail] 1fr;
-  }
+  @include mixin.media-grid(900px, [movieimage] .8fr [moviedetail] 1fr);
 }
-.Action {
-  background: linear-gradient(to top, #281a1a 90%, rgba(0, 0, 0, 0) 100%);
-}
-.Adventure {
-  background: linear-gradient(to top, #333052 90%, rgba(0, 0, 0, 0) 100%);
-}
-.Animation {
-  background: linear-gradient(to top, #004064 90%, rgba(0, 0, 0, 0) 100%);
-}
+
 .movie__image{
   width: 100%;  
   grid-area: movieimage;
@@ -32,8 +21,7 @@
   }
 }
 .movie__details{
-  display: flex;
-  flex-direction: column;
+  @include mixin.flex-layout(column, flex-start, flex-start);
   gap: 10px;
   grid-area: moviedetail;
   padding-top: 24px;
@@ -45,7 +33,7 @@
   &__body{
     max-width: 80%;
     padding: 2%;
-    font-family: 'Roboto-light';
+    font-family: variables.$font-roboto-light;
     p{
       padding-bottom: 10px;
       line-height: 23px;
@@ -56,18 +44,19 @@
   }
 }
 
-/* CSS */
+
+
 .button {
   margin-top: 24px;
   align-items: center;
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  background-image: linear-gradient(144deg,variables.$accent_color_one, variables.$accent_color_two, 50%, variables.$accent_color_three);
   border: 0;
   border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-shadow: variables.$shadow_color 0 15px 30px -5px;
   box-sizing: border-box;
   color: #FFFFFF;
   display: flex;
-  font-family: 'Roboto-light';
+  font-family: variables.$font-roboto-light;
   font-size: 16px;
   justify-content: center;
   line-height: 23px;

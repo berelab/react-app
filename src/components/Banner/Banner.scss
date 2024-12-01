@@ -1,3 +1,6 @@
+@use '../../styles/variables';
+@use '../../styles/global';
+
 .banner{
   position: relative;
   max-height: 60vh;
@@ -16,7 +19,7 @@
       left: 0;
       height: 100%;
       object-fit: cover;
-      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+      mask-image: linear-gradient(to bottom, variables.$primary_color, #00000000);
     }
   }
   &__slogan{
@@ -24,12 +27,12 @@
     top: 40%;
     left: 2%;    
     margin: 0 0 1rem;
-    font-family: 'Roboto-light';
+    font-family: variables.$font-roboto-light;
     font-size: 2rem;
     width: 90%;
 
     h2{
-      font-family: 'Roboto-black';
+      font-family: variables.$font-roboto-bold;
       font-size: 4rem;
       span{
         display: inline-block;

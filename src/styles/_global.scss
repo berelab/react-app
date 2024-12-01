@@ -1,0 +1,28 @@
+@use './variables';
+
+$genre-fonts: (
+  Action: variables.$font-action,
+  Animation: variables.$font-animation,
+  Adventure: variables.$font-adventure,
+  Comedy: variables.$font-comedy,
+  Crime: variables.$font-crime,
+  Documentary: variables.$font-documentary,
+  Drama: variables.$font-drama,
+  Family: variables.$font-family,
+  Fantasy: variables.$font-fantasy,
+  History: variables.$font-history,
+  Horror: variables.$font-horror,
+  Music: variables.$font-music,
+  Mystery: variables.$font-mystery,
+  Romance: variables.$font-romance,
+  ScienceFiction: variables.$font-scifi,
+  Thriller: variables.$font-thriller,
+  War: variables.$font-war,
+  Western: variables.$font-western,
+);
+
+@each $genre, $font in $genre-fonts {
+  .#{$genre} {
+    font-family: #{$font} !important;
+  }
+}
