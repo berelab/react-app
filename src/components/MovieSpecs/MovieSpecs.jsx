@@ -42,7 +42,7 @@ const MovieSpecs = ({details}) => {
           </p>
           <p><strong>Language:</strong> {original_language}</p>
           <p><strong>Overview:</strong><br/>{overview}</p>
-          <button className="button" onClick={isFavorite? handleRemoveFromWatchList : handleAddToWatchList} role="button"><span className="button__text">{isFavorite? 'Remove from watchlist 💔' : 'Add to watchlist ❤️'}</span></button>
+          <button className={`button btn-${genre? trimmed_genre : 'default'}`} onClick={isFavorite? handleRemoveFromWatchList : handleAddToWatchList} role="button"><span className="button__text">{isFavorite? 'Remove from watchlist 💔' : 'Add to watchlist ❤️'}</span></button>
         </div>
       </div>
     </div>

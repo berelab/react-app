@@ -41,3 +41,25 @@ $font-sizes: (
   smaill: 0.675rem
 );
 
+$btn-gradients: (
+  Action: (color1: #d9ff40, color2: #72baa3, color3: #3feb00),
+  Animation: (color1: #FF5733, color2: #FF8D1A, color3: #FFC300),
+  Adventure: (color1: #2838b4, color2: #0dc39f, color3: #76D7C4),
+  Comedy: (color1: #F4D03F, color2: #f54192, color3: #71dc33),
+  Crime: (color1: #207ad4, color2: #ab42f1, color3: #6b0e0e),
+  Documentary: (color1: #AED6F1, color2: #5499C7, color3: #21618C),
+  Drama: (color1: #9ebd69, color2: #133cae, color3: #b94ae4),
+  Family: (color1: #F5B7B1, color2: #EC7063, color3: #5b9426),
+  Fantasy: (color1: #0bc6f0, color2: #52BE80, color3: #cd4818),
+  History: (color1: #ee990f, color2: #19db6d, color3: #9633dc),
+  Horror: (color1: #922B21, color2: #641E16, color3: #C0392B),
+  Music: (color1: #e2b65d, color2: #2E86C1, color3: #3fa628),
+  Mystery: (color1: #91f6ff, color2: #566573, color3: #0a4b8c),
+  Romance: (color1: #E74C3C, color2: #CD6155, color3: #ff14b4),
+  ScienceFiction: (color1: #0f3d34, color2: #1ABC9C, color3: #1634a0),
+  Thriller: (color1: #0080ff, color2: #d21919, color3: #11a9a3),
+  War: (color1: #0025cc, color2: #e33d2b, color3: #160503),
+  Western: (color1: #930449, color2: #a620db, color3: #dba6f1),
+  default: (color1: #AF40FF, color2: #5B42F3, color3: #00DDEB),
+  TVMovie: (color1: #a9ff40, color2: #5B42F3, color3: #eb6600)
+);

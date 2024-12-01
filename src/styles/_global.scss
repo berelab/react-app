@@ -1,5 +1,6 @@
 @use './variables';
 @use './mixin';
+@use 'sass:map';
 
 $genre-fonts: (
   Action: variables.$font-action,
@@ -28,9 +29,18 @@ $genre-fonts: (
   }
 }
 
+@each $genre, $colors in variables.$btn-gradients {
+  $color1: map.get($colors, color1 );
+  $color2: map.get($colors, color2 );
+  $color3: map.get($colors, color3 );
+
+  .btn-#{$genre}{
+    background-image: linear-gradient(144deg, $color1, $color2 50%, $color3) !important;
+  }
+}
+
 %button {
   @include mixin.flex-layout(column);
-  background-image: variables.$gradient;
   border: 0;
   border-radius: variables.$border-radius;
   box-shadow: variables.$shadow_color 0 15px 30px -5px;
