@@ -58,3 +58,8 @@
     }
   }
 }
+
+.recos__header{
+  padding: 0 0 2% 2%;
+  @include mixin.text-format(variables.$font-roboto-bold, xlarge);
+}

@@ -7,7 +7,8 @@ import { useLocation } from 'react-router-dom';
 const MovieSpecs = ({details}) => {
   const location = useLocation();
   const {genre} = location.state || {genre : 'Unknown'};
-
+  const trimmed_genre = genre && typeof genre === 'string' ? genre.replace(/\s/g, "") : '';
+  
   const { watchlist, setWatchlist } = useWatchlist();
   const { id, title, poster_path, genres, original_language, overview, release_date } = details;
 
@@ -24,7 +25,7 @@ const MovieSpecs = ({details}) => {
   };
   
   return(
-    <div className={`movie_specs ${genre? genre.trim() : ''}`}>
+    <div className={`movie_specs ${genre? trimmed_genre : ''}`}>
       <div className='movie__image'>
         <img alt={title} src={`https://image.tmdb.org/t/p/original${poster_path}`}/>
       </div>
