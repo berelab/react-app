@@ -1,10 +1,10 @@
 @use './styles/variables';
 @use './styles/mixin';
 
-@include mixin.font-face("Roboto", "Roboto-Thin", 100);
-@include mixin.font-face("Roboto", "Roboto-Light", 300);
-@include mixin.font-face("Roboto", "Roboto-Regular", 400);
-@include mixin.font-face("Roboto", "Roboto-Bold", 700);
+@include mixin.font-face("Roboto-thin", "Roboto-Thin", 100);
+@include mixin.font-face("Roboto-light", "Roboto-Light", 300);
+@include mixin.font-face("Roboto-regular", "Roboto-Regular", 400);
+@include mixin.font-face("Roboto-bold", "Roboto-Bold", 700);
 @include mixin.font-face("Bangers", "Bangers-Regular", 400);
 @include mixin.font-face("FrederickatheGreat", "FrederickatheGreat-Regular", 400);
 @include mixin.font-face("Chewy", "Chewy-Regular", 400);
